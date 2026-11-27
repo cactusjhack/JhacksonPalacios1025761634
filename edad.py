@@ -12,3 +12,6 @@ def calcular_edad(fecha_nacimiento, hoy=None):
     if (hoy.month, hoy.day) < (fecha_nacimiento.month, fecha_nacimiento.day):
         edad -= 1
     return edad
+
+def es_mayor_de_edad(fecha_nacimiento, hoy=None):
+    return calcular_edad(fecha_nacimiento, hoy) >= 18

@@ -1,6 +1,6 @@
 from datetime import date
 import pytest
-from edad import calcular_edad
+from edad import calcular_edad, es_mayor_de_edad
 
 HOY = date(2026, 11, 26) # fecha fija para que el test nunca cambie
 
@@ -20,3 +20,7 @@ def test_nacido_29_febrero():
 def test_fecha_futura():
     with pytest.raises(ValueError):
         calcular_edad(date(2030, 1, 1), HOY)
+
+def test_mayor_de_edad():
+    assert es_mayor_de_edad(date(2000, 1, 1), HOY) is True
+    assert es_mayor_de_edad(date(2015, 1, 1), HOY) is False
