@@ -24,3 +24,7 @@ def test_fecha_futura():
 def test_mayor_de_edad():
     assert es_mayor_de_edad(date(2000, 1, 1), HOY) is True
     assert es_mayor_de_edad(date(2015, 1, 1), HOY) is False
+
+# test_edad.py
+def test_cumple_manana():
+    assert calcular_edad(date(2005, 11, 27), HOY) == 20
